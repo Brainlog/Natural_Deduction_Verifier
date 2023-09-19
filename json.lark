@@ -26,7 +26,7 @@ start: sequent  proof -> natded
 
 sequent: formulaset "|-" formula -> sequent
 
-formulaset : formula ("," formula)* -> formulaset       
+formulaset :( |(formula ("," formula)*)) -> formulaset       
 
 proof: proof_line* -> proof
 
@@ -50,6 +50,7 @@ explanation:  "premise" -> premise
             | "dneg-el" NUMBER -> d_neg_elim
             | "pbc" range -> proof_by_contra
             | "lem" -> lem
+            | "mt" NUMBER "," NUMBER -> modus_tollens
 
 range: NUMBER "-" NUMBER -> num_range
 

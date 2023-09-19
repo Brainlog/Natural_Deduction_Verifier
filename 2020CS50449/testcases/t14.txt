@@ -5,6 +5,6 @@
 [assumption] q
 [or-in2 5] ((!p) \/ q)
 [assumption] (!q)
-[mp 7, 3] (!p)
+[mt 3, 7] (!p)
 [or-in1 8] ((!p) \/ q)
 [or-el 4, 5-6, 7-9] ((!p) \/ q)

@@ -21,30 +21,30 @@ class TreeToJson(Transformer):
         return (seq,proof) # [[],__] First is list of premises, second is conclusion
     
     def sequent(self, *args):
-        print("Sequent Started")
-        print(args[0])
-        print("Sequent Ended")
+        # print("Sequent Started")
+        # print(args[0])
+        # print("Sequent Ended")
         return args[0]
     
     def formulaset(self, *args):
-        print("Formula")
-        print(args[0])
-        print("Formula ended")
+        # print("Formula")
+        # print(args[0])
+        # print("Formula ended")
         return args[0]
     
     def proof(self, *args):
-        print("Proof")
-        print(args[0])
-        print("Proof ended")
+        # print("Proof")
+        # print(args[0])
+        # print("Proof ended")
         return args[0]
     
     def proof_line(self, *args):
-        print("Proof Line")
+        # print("Proof Line")
         l = args[0][0]
         r = args[0][1]
         l.append(r)
-        print(l)
-        print("Proof Line ended")
+        # print(l)
+        # print("Proof Line ended")
         return l
     
     def premise(self, *args):
@@ -54,104 +54,110 @@ class TreeToJson(Transformer):
         return ["assumption"]
     
     def copy_op(self, *args):
-        print("copy")
-        print(args[0][0].value)
-        print("copy ended")
+        # print("copy")
+        # print(args[0][0].value)
+        # print("copy ended")
         return ['copy',int(args[0][0].value)]
     
     def modus_ponens(self, *args):
-        print("modus ponens")
-        print(args)
-        print("modus ponens ended")
+        # print("modus ponens")
+        # print(args)
+        # print("modus ponens ended")
         return ['modus ponens',int(args[0][0].value),int(args[0][1].value)]
+    
+    def modus_tollens(self, *args):
+        # print("modus tollens")
+        # print(args)
+        # print("modus tollens ended")
+        return ['modus tollens',int(args[0][0].value),int(args[0][1].value)]
         
     
     def and_intro(self, *args):
-        print("and intro")
-        print(args)
-        print("and intro ended")
+        # print("and intro")
+        # print(args)
+        # print("and intro ended")
         return ['and intro',int(args[0][0].value),int(args[0][1].value)]
         
     
     def and_elim1(self, *args):
-        print("and elim1")
-        print(args)
-        print("and elim1 ended")
+        # print("and elim1")
+        # print(args)
+        # print("and elim1 ended")
         return ['and elim1',int(args[0][0].value)]
     
     def and_elim2(self, *args):
-        print("and elim2")
-        print(args)
-        print("and elim2 ended")
+        # print("and elim2")
+        # print(args)
+        # print("and elim2 ended")
         return ['and elim2',int(args[0][0].value)]
     
     def or_intro1(self, *args):
-        print("or intro1")
-        print(args)
-        print("or intro1 ended")
+        # print("or intro1")
+        # print(args)
+        # print("or intro1 ended")
         return ['or intro1',int(args[0][0].value)]
     
     def or_intro2(self, *args):
-        print("or intro2")
-        print(args)
-        print("or intro2 ended")
+        # print("or intro2")
+        # print(args)
+        # print("or intro2 ended")
         return ['or intro2',int(args[0][0].value)]
     
     def or_elim(self, *args):
-        print("or elim")
-        print(['or elim',int(args[0][0].value),args[0][1],args[0][2]])
-        print("or elim ended")
+        # print("or elim")
+        # print(['or elim',int(args[0][0].value),args[0][1],args[0][2]])
+        # print("or elim ended")
         return ['or elim',int(args[0][0].value),args[0][1],args[0][2]]
     
     def impl_intro(self, *args):
-        print("impl intro")
-        print(['impl intro',args[0][0]])
-        print("impl intro ended")
+        # print("impl intro")
+        # print(['impl intro',args[0][0]])
+        # print("impl intro ended")
         return ['impl intro',args[0][0]]
     
     def neg_intro(self, *args):
-        print("neg intro")
-        print(['neg intro',args[0][0]])
-        print("neg intro ended")
+        # print("neg intro")
+        # print(['neg intro',args[0][0]])
+        # print("neg intro ended")
         return ['neg intro',args[0][0]]
     
     def neg_elim(self, *args):
-        print("neg elim")
-        print(['neg elim',int(args[0][0].value),int(args[0][1].value)])
-        print("neg elim ended")
+        # print("neg elim")
+        # print(['neg elim',int(args[0][0].value),int(args[0][1].value)])
+        # print("neg elim ended")
         return ['neg elim',int(args[0][0].value),int(args[0][1].value)]
     
     def bot_elim(self, *args):
-        print("bot elim")
-        print(['bot elim',int(args[0][0].value)])
-        print("bot elim ended")
+        # print("bot elim")
+        # print(['bot elim',int(args[0][0].value)])
+        # print("bot elim ended")
         return ['bot elim',int(args[0][0].value)]
     
     def d_neg_intro(self, *args):
-        print("d neg intro")
-        print(['d neg intro',int(args[0][0].value)])
-        print("d neg intro ended")
+        # print("d neg intro")
+        # print(['d neg intro',int(args[0][0].value)])
+        # print("d neg intro ended")
         return ['d neg intro',int(args[0][0].value)]
     
     def d_neg_elim(self, *args):
-        print("d neg elim")
-        print(['d neg elim',int(args[0][0].value)])
-        print("d neg elim ended")
+        # print("d neg elim")
+        # print(['d neg elim',int(args[0][0].value)])
+        # print("d neg elim ended")
         return ['d neg elim',int(args[0][0].value)]
     
     def proof_by_contra(self, *args):
-        print("proof by contra")
-        print(['proof by contra',args[0][0]])
-        print("proof by contra ended")
+        # print("proof by contra")
+        # print(['proof by contra',args[0][0]])
+        # print("proof by contra ended")
         return ['proof by contra',args[0][0]]
     
     def lem(self, *args):
         return ['lem']
     
     def num_range(self, *args):
-        print("num range")
-        print([int(args[0][0].value),int(args[0][1].value)])
-        print("num range ended")
+        # print("num range")
+        # print([int(args[0][0].value),int(args[0][1].value)])
+        # print("num range ended")
         return [int(args[0][0].value),int(args[0][1].value)]
         
     
@@ -174,7 +180,7 @@ class TreeToJson(Transformer):
         l = ['I']
         l.append(args[0][0])
         l.append(args[0][1])
-        print(l)
+        # print(l)
         return l
     
     def not_op(self, *args):
@@ -203,10 +209,12 @@ def orel(proofs,scopesend,prooflist):
             scopestarts.append(range2)
             if range1 in scopesend:
                 scopesend[range1].append(range1end)
+                scopesend.sort()
             else:
                 scopesend[range1] = [range1end]
             if range2 in scopesend:
                 scopesend[range2].append(range2end)
+                scopesend.sort()
             else:
                 scopesend[range2] = [range2end]
     return scopestarts
@@ -224,6 +232,7 @@ def implin(proofs, scopesend,prooflist):
             scopesstarts.append(range1)
             if range1 in scopesend:
                 scopesend[range1].append(range1end)
+                scopesend[range1].sort()
             else:
                 scopesend[range1] = [range1end]
     return scopesstarts
@@ -241,6 +250,7 @@ def negin(proofs, scopesend,prooflist):
             scopesstarts.append(range1)
             if range1 in scopesend:
                 scopesend[range1].append(range1end)
+                scopesend[range1].sort()
             else:
                 scopesend[range1] = [range1end]
     return scopesstarts
@@ -256,6 +266,7 @@ def pbc(proofs, scopesend,prooflist):
             scopesstarts.append(range1)
             if range1 in scopesend:
                 scopesend[range1].append(range1end)
+                scopesend[range1].sort()
             else:
                 scopesend[range1] = [range1end]
     return scopesstarts  
@@ -273,30 +284,29 @@ def scopesending(scopes_end):
     for (key,value) in scopes_end.items():
         value = list(set(value))
         value.sort()
-        if(len(value)>1):
-            return 0
-        temp.append([key,value[0]])
-    print(temp)
+        temp.append([key,value[-1]])
+    # print(temp)
     for i in range(len(temp)):
         for j in range(len(temp)):
             if(i!=j):
-                chk1 = (temp[i][0]==temp[j][0] and temp[i][1] > temp[j][1])
-                chk2 = (temp[i][0]==temp[j][0] and temp[i][1] < temp[j][1])
-                chk3 = (temp[i][0]>temp[j][0] and temp[i][1] == temp[j][1])
-                chk4 = (temp[i][0]<temp[j][0] and temp[i][1] == temp[j][1])
                 chk5 = (temp[i][0]<temp[j][0] and temp[j][0] < temp[i][1] and temp[j][1]>temp[i][1])
                 chk6 = (temp[i][0]>temp[j][0] and temp[i][0] < temp[j][1] and temp[i][1]>temp[j][1])
-                if chk1 or chk2 or chk3 or chk4 or chk5 or chk6:
+                if chk5 or chk6:
+                    # print("I got here")
                     return 0
     # chking dictionary, every element length shuould be one (First do stable sort)
     return 1
 
 def scopechking(scopes_got,actual_scopes):
-    scopes_got.sort()
-    actual_scopes.sort()
-    print(scopes_got)
-    print(actual_scopes)
-    if(scopes_got!=actual_scopes):
+    scopes_got1 = scopes_got.copy()
+    actual_scopes1 = actual_scopes.copy()
+    scopes_got1 = list(set(scopes_got1))
+    actual_scopes1 = list(set(actual_scopes1))
+    scopes_got1.sort()
+    actual_scopes1.sort()
+    # print(scopes_got1)
+    # print(actual_scopes1)
+    if(scopes_got1!=actual_scopes1):
         return 0
     # chking list same 
     return 1
@@ -328,14 +338,18 @@ def copycheck(prooflist,proof,verifstack):
     chk1 = 0
     chk2 = 0
     linenum = int(proof[1])
+    # print("This is linenum : ",linenum)
     chk2 = (listfind(linenum,verifstack))
     if chk2 == 1:
         formulacopied = prooflist[linenum][-1]
         formulamy = proof[-1]
         try:
-            chk2 = (formulamy==formulacopied)
+            chk1 = (formulamy==formulacopied)
         except:
             return 0
+    # print("This is verif stack :" ,verifstack)
+    # print("This is chk2 for copy : ",chk2)
+    # print("This is chk1 for copy : ",chk1)
     return chk1 and chk2        
 
 def modusponenscheck(prooflist,proof,verifstack):
@@ -352,6 +366,23 @@ def modusponenscheck(prooflist,proof,verifstack):
             chk2 = (formula2[0]=='I') and (formula1 == formula2[1]) and (formula3 == formula2[2])
         except:
             return 0
+    # print("This is modus ponens : ",chk1,chk2)
+    return chk1 and chk2
+
+def modustollenscheck(prooflist,proof,verifstack):
+    chk1 = 0
+    chk2 = 0
+    linenum1 = int(proof[1])
+    linenum2 = int(proof[2])
+    chk1 = (listfind(linenum1,verifstack)) and (listfind(linenum2,verifstack))
+    if chk1 == 1:
+        formula1 = prooflist[linenum1][-1] ## I a b
+        formula2 = prooflist[linenum2][-1] ## N b
+        formula3 = proof[-1] ## N a
+        try:
+            chk2 = (formula1[0]=='I') and (formula1[1] == formula3[1]) and (formula1[2] == formula2[1]) and (formula2[0]=='N') and (formula3[0]=='N')
+        except:
+            return 0
     return chk1 and chk2
     
 def andintrocheck(prooflist,proof,verifstack):
@@ -365,9 +396,11 @@ def andintrocheck(prooflist,proof,verifstack):
         formula2 = prooflist[linenum2][-1] ## b
         formula3 = proof[-1] ## 'A' a b
         try:
-            chk2 = (formula3[0]=='A') and (formula1 == formula3[0]) and (formula2 == formula3[1])
+            chk2 = (formula3[0]=='A') and (formula1 == formula3[1]) and (formula2 == formula3[2])
+            # print(chk2, "hi")
         except:
             return 0
+    # print(chk1)
     return chk1 and chk2
     
 
@@ -411,8 +444,8 @@ def orintro1check(prooflist,proof,verifstack):
             chk2 = (formula2[0]=='O') and (formula2[1]==formula1)
         except:
             return 0
-    print("chk1 : ",chk1)
-    print("chk2 : ",chk2)
+    # print("chk1 : ",chk1)
+    # print("chk2 : ",chk2)
     return chk1 and chk2
     
 
@@ -442,11 +475,11 @@ def orelimcheck(prooflist,proof,verifstack):
     linenum5 = range2[1] ## q
     chk1 = (listfind(range1,verifstack)) and (listfind(range2,verifstack)) and (listfind(linenum1,verifstack))
     if chk1 == 1:
-        formula1 = prooflist[linenum1][-1]
-        formula2 = prooflist[linenum2][-1]
-        formula3 = prooflist[linenum3][-1]
-        formula4 = prooflist[linenum4][-1]
-        formula5 = prooflist[linenum5][-1]
+        formula1 = prooflist[linenum1][-1] # O p r
+        formula2 = prooflist[linenum2][-1] # p
+        formula3 = prooflist[linenum3][-1] # q
+        formula4 = prooflist[linenum4][-1] # r
+        formula5 = prooflist[linenum5][-1] # q
         formula6 = proof[-1] ## q
         try:
             chk2 = (formula1[0]=='O') and (formula1[1]==formula2) and (formula1[2]==formula4) and (formula3 == formula6) and (formula5 == formula6)
@@ -470,8 +503,8 @@ def implintrocheck(prooflist,proof,verifstack):
             chk2 = (formula3[0]=='I') and (formula1==formula3[1]) and (formula2==formula3[2])
         except:
             return 0
-    print("implication intro : chk1 : ",chk1)
-    print("implication intro : chk2 : ",chk2)
+    # print("implication intro : chk1 : ",chk1)
+    # print("implication intro : chk2 : ",chk2)
     return chk1 and chk2
         
 
@@ -487,9 +520,10 @@ def negintrocheck(prooflist,proof,verifstack):
         formula2 = prooflist[linenum2][-1] ## B
         formula3 = proof[-1] ## !p => 'N' p
         try:
-            chk2 = (formula3[0]=='N') and formula3[0]==formula1 and formula3[1] == formula2 and formula2 == ['B']
+            chk2 = (formula3[0]=='N') and formula3[1]==formula1 and formula2 == ['B']
         except:
             return 0
+    # print("This is neg intro :",chk1,chk2)
     return chk1 and chk2
 
 def negelimcheck(prooflist,proof,verifstack):
@@ -500,7 +534,7 @@ def negelimcheck(prooflist,proof,verifstack):
     chk1 = (listfind(linenum1,verifstack)) and (listfind(linenum2,verifstack))
     if chk1 == 1:
         formula1 = prooflist[linenum1][-1] ## p
-        formula2 = prooflist[linenum2][-1] ## !p => N p
+        formula2 = prooflist[linenum2][-1] ## N p
         formula3 = proof[-1] ## ['B']
         try:
             chk2 = (formula3 == ['B']) and (formula2[1]==formula1) and (formula2[0]=='N')
@@ -541,10 +575,10 @@ def dnegelimcheck(prooflist,proof,verifstack):
     linenum1 = proof[1]
     chk1 = listfind(linenum1,verifstack)
     if chk1 == 1:
-        formula1 = proof[-1] ## ! (! p) => N,[N,p]
-        formula2 = prooflist[linenum1][-1] ## p
+        formula2 = prooflist[linenum1][-1] ## ! (! p) => [N,[N,p]]
+        formula1 = proof[-1] ## p
         try:
-            chk2 = (formula1[0]=='N') and (formula1[1][0]=='N') and (formula1[1][1]==formula2)
+            chk2 = (formula2[0]=='N') and (formula2[1][0]=='N') and (formula2[1][1]==formula1)
         except:
             return 0
     return chk1 and chk2
@@ -557,12 +591,13 @@ def proofbycontracheck(prooflist,proof,verifstack):
     linenum2 = range1[1] ## ['B']
     chk1 = listfind(range1,verifstack)
     if chk1 == 1:
-        formula1 = prooflist[linenum1][-1] ## p
+        formula1 = prooflist[linenum1][-1] ## [N p]
         formula2 = prooflist[linenum2][-1] ## ['B']
-        formula3 = proof[-1] ## ! p => N p
+        formula3 = proof[-1] ## p
         try:
-            chk2 = (formula1 == formula3[1]) and (formula3[0]=='N') and (formula2 == ['B']) 
+            chk2 = (formula3 == formula1[1]) and (formula1[0]=='N') and (formula2 == ['B']) 
         except:
+            # print(chk1,chk2, "This")
             return 0
     return chk1 and chk2
         
@@ -578,19 +613,28 @@ def lemcheck(prooflist,proof,verifstack):
     
     
 
-def verifier():
+def checkProof(filepath):
+    incorrect = 'incorrect'
+    correct = 'correct'
     debug = False
     if len(sys.argv)==3:
         debug = True
-    with open(sys.argv[1]) as f:
+    with open(filepath) as f:
         s = f.read()
-        (seq,proofs) =(parser.parse(s))
+        # print(s)
+        (seq,proofs) = (parser.parse(s))
         premises = seq[0]
         conclusion = seq[1]
         if(debug):
             print("premises : ",premises)
             print("conclusion : ",conclusion)
             print("proofs : ",proofs)
+        if(proofs[-1][-1]!=conclusion):
+            if debug:
+                print("No conclusion")
+                print(proofs[-1][-1])
+                print(conclusion)
+            return incorrect
         prooflist = [0,0,0]
         prooflist.extend(proofs)
         scopes_end = {}
@@ -599,19 +643,22 @@ def verifier():
         scopes_got += negin(proofs,scopes_end,prooflist)
         scopes_got += pbc(proofs,scopes_end,prooflist)
         scopes = assume(proofs)
+        for pa,pb in scopes_end.items():
+            pb = list(set(pb))
+            pb.sort()
         if(scopesending(scopes_end)==0):
             if debug:
                 print("Scope are not completely overlapping")
-            print("incorrect")
-            return
+            # print("incorrect")
+            return incorrect
         else:
             scopes_got.sort()
             scopes.sort()
             if(scopechking(scopes_got,scopes)==0):
                 if debug:
                     print("Assumption Box is not ended")
-                print("incorrect")
-                return
+                # print("incorrect")
+                return incorrect
             else:
                 ## Use this prooflist now
                 verifstack = []
@@ -623,14 +670,14 @@ def verifier():
                         if(chk == 0):
                             if debug:
                                 print(f"Premise Line no. {i} not found")
-                            print("incorrect")
-                            return
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                             
                     if(myproof[0]=='assumption'):
                         verifstack.append("|") ## To mark scope start
-                        scopeendstack.append(int(scopes_end[i][0])) ## To mark scope end => (key,[ending])
+                        scopeendstack.append(int(scopes_end[i][-1])) ## To mark scope end => (key,[ending])
                         verifstack.append(i)
                         
                     
@@ -638,9 +685,9 @@ def verifier():
                         chk = copycheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -648,9 +695,19 @@ def verifier():
                         chk = modusponenscheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
+                        else:
+                            verifstack.append(i)
+                            
+                    if(myproof[0]=='modus tollens'):
+                        chk = modustollenscheck(prooflist,myproof,verifstack)
+                        if(chk == 0):
+                            if debug:
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -659,9 +716,9 @@ def verifier():
                         chk = andintrocheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -670,9 +727,9 @@ def verifier():
                         chk = andelim1check(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -681,21 +738,21 @@ def verifier():
                         chk = andelim2check(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
                     
                     if(myproof[0]=='or intro1'):
-                        print("This is stack : ",verifstack)
+                        # print("This is stack : ",verifstack)
                         chk = orintro1check(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -704,9 +761,9 @@ def verifier():
                         chk = orintro2check(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -715,21 +772,21 @@ def verifier():
                         chk = orelimcheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
                     
                     if(myproof[0]=='impl intro'):
-                        print("This is stack : ",verifstack)
+                        # print("This is stack : ",verifstack)
                         chk = implintrocheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -738,9 +795,9 @@ def verifier():
                         chk = negintrocheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -749,9 +806,9 @@ def verifier():
                         chk = negelimcheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -760,9 +817,9 @@ def verifier():
                         chk = botelimcheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -771,9 +828,9 @@ def verifier():
                         chk = dnegintrocheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -782,9 +839,9 @@ def verifier():
                         chk = dnegelimcheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -793,9 +850,9 @@ def verifier():
                         chk = proofbycontracheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
@@ -804,25 +861,31 @@ def verifier():
                         chk = lemcheck(prooflist,myproof,verifstack)
                         if(chk == 0):
                             if debug:
-                                print(f"Copying Line no. {i} is wrong")
-                            print("incorrect")
-                            return
+                                print(f"{myproof[0]} Line no. {i} is wrong")
+                            # print("incorrect")
+                            return incorrect
                         else:
                             verifstack.append(i)
                     
                     
-                    if(len(scopeendstack)>0):
-                        if(i == scopeendstack[-1]):
+                    while(len(scopeendstack)>0 and i == scopeendstack[-1]):
                             tempstack = []
                             while(verifstack[-1]!='|'):
                                 tempstack.append(verifstack[-1])
                                 verifstack.pop()
                             verifstack.pop()
-                            verifstack.append([tempstack[-1],i])
+                            allranges = scopes_end[tempstack[-1]]
+                            for rangi in allranges:
+                                verifstack.append([tempstack[-1],int(rangi)])
                             scopeendstack.pop()
                     
-                    print("Current Stack After Action : ",verifstack)
-                    print("Current Scope ending : ",scopeendstack)
-                    
-                print("correct")
-verifier()     
+                    # print("Current Stack After Action : ",verifstack)
+                    # print("Current Scope ending : ",scopeendstack)
+                    # print("Current Scopes_end : ",scopes_end)                
+                return correct
+            
+if __name__ == '__main__':
+    f = sys.argv[1]
+    res = checkProof(f)
+    print(res)
+     

@@ -1,0 +1,6 @@
+x1 |- x1
+
+[assumption] (!x1)
+[premise] x1
+[neg-el 4,3] \bot
+[pbc 3-5] x1
